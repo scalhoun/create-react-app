@@ -115,6 +115,11 @@ module.exports = {
       }
     ],
     loaders: [
+      // CUSTOM SASS
+      {
+        test: /(\.scss|\.sass)$/,
+        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
+      },
       // Process JS with Babel.
       {
         test: /\.(js|jsx)$/,
